@@ -1,0 +1,114 @@
+/* ## Date panel ------------------------------------------------------------ */
+.date-panel {
+	@extend .clearfix;
+	display: block;
+	.date-heading {
+		@include rem(24);
+		@extend .text-center;
+		@extend .text-uppercase;
+		@extend .text-normal;
+		display: block;
+		padding: 8px;
+		background-color: $link-color;
+		color: $white;
+	}
+	.date-body {
+		@include rem(48);
+		@extend .text-center;
+		@extend .text-center;
+		@extend .text-uppercase;
+		@extend .text-bold;
+		background-color: $white;
+		color: $link-color;
+		display: block;
+		padding: 30px;
+	}
+	.date-footer {
+		display: none;
+	}
+}
+
+/* ## Countdown ------------------------------------------------------------- */
+.countdown {
+	@include clearfix;
+	text-align: center;
+	line-height: 1;
+	& > span {
+		@include tablet {
+			@include span-columns(3 of 12);
+		}
+		color: $body-color;
+		display: block;
+		text-align: center;
+		@include rem(12);
+		@extend .text-uppercase;
+		@extend .text-normal;
+		& > span {
+			@extend .text-semibold;
+			@extend .text-uppercase;
+			background-color: #000;
+			color: $white;
+			@include rem(48);
+			display: block;
+			padding: 20px 0;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+/* ## Button Shortcode ------------------------------------------------------ */
+.gb_button {
+	@extend %button;
+	&.btn {
+		&-flat {
+			border-radius: 0px !important;
+		}
+		&-default {
+			background-color: rgba($body-color, 0) !important;
+			border: none !important;
+			&:hover, &:focus {
+				background-color: rgba($body-color, 0) !important;
+			}
+		}
+	}	
+	.btn-wrap {
+		display: inline-block;
+		line-height: 1;
+	}
+}
+
+/* ## Testimonial Shortcode ------------------------------------------------- */
+.gb_testimonial {
+	.testimonial-content {
+		@include row;
+		.testimonial-heading {
+			@include tablet {
+				@include span-columns(2 of 6);
+			}
+			.image-wrapper {
+				img {
+					margin-bottom: 0;
+					max-width: 100%;
+					width: auto;
+				}
+			}
+		}
+
+		.testimonial-body {
+			@include tablet {
+				@include span-columns(4 of 6);
+			}
+		}
+
+		.testimonial-footer {
+
+		}
+	}
+}
+
+/* ## Text Shortcode -------------------------------------------------------- */
+.gb_text {
+	.icon-font, .icon-img {
+		@extend %icon-type;
+	}
+}

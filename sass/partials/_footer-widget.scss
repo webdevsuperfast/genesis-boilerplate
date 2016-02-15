@@ -1,0 +1,55 @@
+/* ## Footer Widgets
+----------------------------------------------------------------------------- */
+
+.footer-widgets {
+	background-color: $body-color;
+	color: $footer-widget-color;
+	padding: $margin*2 0;
+	a {
+		color: $white;
+		&.button, &:hover, &:focus {
+			color: $link-color;
+		}
+	}
+	input {
+		border: 1px solid $footer-widget-border-color;
+	}
+	li {
+		border-bottom: 1px dotted $footer-widget-border-color-alternate;
+		margin-bottom: $margin/2;
+		padding-bottom: $margin/2;
+		&:last-child {
+			border-bottom-color: rgba($black, 0);
+		}
+	}
+	.widget {
+		margin-bottom: $margin;
+		&-title,&title {
+			@extend .text-uppercase;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.widget_recent_entries {
+		li {
+			a {
+				color: $white;
+				display: block;
+				font-family: $heading-font;
+				&:hover, &:focus {
+					color: $link-color;
+				} 
+			}
+			span {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,65 @@
+/*!
+Theme Name: Genesis Boilerplate
+Theme URI: http://www.recommendwp.com/
+Description: This is a child theme created for the Genesis Framework.
+Author: RecommendWP
+Author URI: http://www.recommend.com/
+Template: genesis
+Template Version: 2.2.6
+Tags: black, orange, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+License: GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+// Normalize.css
+@import "../bower_components/support-for/sass/support-for";
+@import "../bower_components/normalize-scss/sass/normalize/variables";
+@import "../bower_components/normalize-scss/sass/normalize/vertical-rhythm";
+@import "../bower_components/normalize-scss/sass/normalize/normalize-mixin";
+
+@include normalize;
+
+// Bourbon
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+// Neat
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+// Font Awesome
+@import "../bower_components/font-awesome/scss/font-awesome";
+
+// Owl Carousel
+@import "../bower_components/owl.carousel/src/scss/owl.carousel";
+@import "../bower_components/owl.carousel/src/scss/owl.theme.default";
+@import "../bower_components/owl.carousel/src/scss/owl.animate";
+@import "../bower_components/owl.carousel/src/scss/owl.autoheight";
+@import "../bower_components/owl.carousel/src/scss/owl.lazyload";
+@import "../bower_components/owl.carousel/src/scss/owl.video";
+
+// Variables
+@import "modules/variables";
+
+// Mixin
+@import "modules/mixins";
+
+// SlickNav
+@import "modules/slicknav/slicknav";
+
+// Extends
+@import "modules/extends";
+
+// Partials
+@import "partials/reset";
+@import "partials/default";
+@import "partials/layout";
+@import "partials/common";
+@import "partials/widget";
+@import "partials/plugin";
+@import "modules/woocommerce/woocommerce";
+@import "partials/shortcode";
+@import "partials/header";
+@import "partials/navigation";
+@import "partials/content";
+@import "partials/sidebar";
+@import "partials/footer-widget";
+@import "partials/footer";

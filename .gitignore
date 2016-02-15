@@ -1,0 +1,11 @@
+.sass-cache
+node_modules
+bower_components
+tmp
+.ftppass
+npm-debug.log
+dploy.yaml
+temp
+style.css.map
+temp
+.vscode

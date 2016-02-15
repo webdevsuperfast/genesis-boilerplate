@@ -1,0 +1,62 @@
+// Font Weight, Style, Text Transform, Alignment
+$weights: (thin, 100), (extralight, 200), (light, 300), (normal, 400), (medium, 500), (semibold, 600), (bold, 700), (extrabold,800), (heavy, 900);
+$styles: italic, oblique, normal, inherit, initial, unset;
+$transforms: capitalize, uppercase, lowercase, none, full-width;
+$alignments: none, left, right, center;
+
+// Font Weight
+@each $weight, $value in $weights {
+	.text-#{$weight} {
+		font-weight: $value;
+	}
+}
+
+// Font Style
+@each $style in $styles {
+	.text-#{$style} {
+		font-style: $style;
+	}
+}
+
+// Text Transform
+@each $transform in $transforms {
+	.text-#{$transform} {
+		text-transform: $transform;
+	}
+}
+
+// Text Alignment
+@each $alignment in $alignments {
+	.text-#{$alignment} {
+		text-align: none;
+		@include tablet {
+			text-align: $alignment;
+		}
+	}
+}
+
+//* Icons & Type Alignment Fix
+// @link http://snook.ca/archives/html_and_css/icons-and-type
+%icon-type {
+	display: inline-block;
+	position: relative;
+	top: -0.1em;
+	vertical-align: middle;
+}
+
+%button {
+	@extend .text-uppercase;
+	color: $button-color;
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	font-family: $button-font;
+	font-weight: $button-font-weight;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: 1px solid transparent;
+	white-space: nowrap;
+	line-height: 1;	
+}

@@ -1,0 +1,24 @@
+/* ## HTML5 Reset
+----------------------------------------------------------------------------- */
+
+html,
+input[type="search"]{
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.author-box, .clearfix, .entry, .entry-content, .footer-widgets, .nav-primary, .nav-secondary, .pagination, .site-container, .site-footer, .site-header, .site-inner, .wrap {
+	@include clearfix;
+}
+
+/* ### Custom Fonts */
+// WooCommerce Star Rating
+@include font-face('star', 'fonts/woocommerce/star', $file-formats: eot svg ttf woff);
+
+// WooCommerce Font
+@include font-face('WooCommerce', 'fonts/woocommerce/WooCommerce', $file-formats: eot svg ttf woff);

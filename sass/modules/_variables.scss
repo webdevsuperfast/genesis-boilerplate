@@ -1,0 +1,150 @@
+// Base Color
+$black: #000;
+$white: #fff;
+
+// Body
+$body-font-size: 16px;
+$body-font: "Source Sans Pro", sans-serif;
+$body-line-height: 1.625;
+$body-background: $white;
+$body-color: #333;
+$body-font-weight: 300;
+
+// Heading
+$heading-font: "Source Sans Pro", sans-serif;
+$heading-font-weight: 400;
+$heading-color: $body-color;
+$heading-line-height: 1.2;
+
+// Link
+$link-color: #c3251d;
+$link-color-hover: $body-color;
+
+// Layout
+$margin: 30px;
+$width: 1140px;
+
+// Base
+$base-font-size: 16px;
+$base-line-height: 26px;
+
+// Devices
+$largescreen: 1200px;
+$desktop: 992px;
+$tablet: 768px;
+$mobile: 767px;
+
+// Border
+$border-color: #ddd;
+$border-color-hover: #999;
+$border-featured-color: #f5f5f5;
+$outline-color: #ccc;
+
+// Horizontal Rule
+$horizontal-rule-color: $border-color;
+
+// Gallery
+$gallery-border-color: $border-color;
+$gallery-border-color-hover: $border-color-hover;
+
+// Inputs
+$input-background: lighten($black, 95);
+$input-border-color: $border-color;
+$input-color: $body-color;
+$input-padding-x: $margin/2;
+$input-padding-y: $margin/3;
+$input-border-color-hover: $border-color-hover;
+$placeholder-color: $body-color;
+
+// Buttons
+$button-background: $body-color;
+$button-color: $white;
+$button-font: $heading-font;
+$button-font-weight: 700;
+$button-padding-y: 16px;
+$button-padding-x: 24px;
+$button-background-hover: $link-color;
+$button-color-hover: #fff;
+
+// Table
+$table-margin: 40px;
+$table-border-color: $border-color;
+$table-padding-x: 0px;
+$table-padding-y: 6px;
+$table-heading-font-weight: 400;
+
+// Screen Reader
+$screen-reader-color: $body-color;
+$screen-reader-background: $white;
+$screen-reader-padding: 15px 23px 14px;
+
+// Avatar
+$avatar-margin-left: 24px;
+$avatar-margin-right: 24px;
+$avatar-margin-bottom: 24px;
+
+// Navigation
+$nav-font-size: 16px;
+$nav-color: $body-color;
+$nav-padding-x: $margin;
+$nav-padding-y: 20px;
+$nav-color-hover: $link-color;
+
+$subnav-background: $body-color;
+$subnav-border-color: $body-color;
+$subnav-font-size: 16px;
+$subnav-color: $white;
+$subnav-color-hover: $link-color;
+$subnav-padding-x: $margin;
+$subnav-padding-y: 15px;
+
+$navextra-color: #fff;
+$navextra-padding-x: 0;
+$navextra-padding-y: $nav-padding-y;
+
+$subnav-border-color-alternate: #eee;
+
+$nav-primary-color: $white;
+$nav-primary-background: $body-color;
+$nav-primary-color-hover: $link-color;
+$nav-primary-subnav-color: $white;
+$nav-primary-subnav-color-hover: $link-color;
+
+$nav-secondary-background: lighten($black, 50);
+
+// Entry
+$entry-background: #fff;
+$entry-border-color: #f5f5f5;
+
+// Allowed Tags
+$allowed-tags-background: #f5f5f5;
+
+// Code
+$code-background: $body-color;
+$code-color: #ddd;
+
+// Pagination
+$pagination-color: $white;
+$pagination-background: $body-color;
+$pagination-padding-x: 12px;
+$pagination-padding-y: 8px;
+
+// Comments
+$comment-background: $white;
+
+// Footer
+$footer-background: $white;
+
+// Sidebar
+$sidebar-border-color: #ddd;
+$sidebar-widget-background: $white;
+
+// Footer Widget
+$footer-widget-background: $body-color;
+$footer-widget-color: #aaa;
+$footer-widget-border-color: $body-color;
+$footer-widget-button-color: $white;
+$footer-widget-border-color-alternate: #666;
+
+// Slick Navigation
+$color_bg: $body-color;
