@@ -25,7 +25,7 @@ define( 'GB_JS', CHILD_URL . '/js/' );
 //* Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'gb_google_fonts' );
 function gb_google_fonts() {
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,400italic,700,700italic', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,400italic,700,700italic', array(), GB_THEME_VERSION );
 }
 
 //* Cleanup WP Head

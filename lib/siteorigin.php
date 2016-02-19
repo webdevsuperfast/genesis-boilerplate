@@ -30,7 +30,7 @@ function gb_siteorigin_settings( $defaults ) {
 	$defaults['tablet-width'] = 991;
 	
 	// Content field
-	$defaults['copy-content'] = false;
+	$defaults['copy-content'] = true;
 
 	// Post types
 	$defaults['post-types'] = array( 'page' );
