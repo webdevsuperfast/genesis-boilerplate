@@ -19,7 +19,8 @@
     "normalize-scss": "normalize.scss#~4.0.3",
     "slicknav": "~1.0.5",
     "owl.carousel": "~2.0.0-beta.3",
-    "neat": "^1.7.2",
-    "bourbon": "^4.2.6"
+    "neat": "^1.7.4",
+    "bourbon": "^4.2.6",
+    "smart-media-queries": "^1.1.0"
   }
 }

@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 @include normalize;
 
+// Variables
+@import "modules/variables";
+
 // Bourbon
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 
@@ -35,9 +38,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "../bower_components/owl.carousel/src/scss/owl.autoheight";
 @import "../bower_components/owl.carousel/src/scss/owl.lazyload";
 @import "../bower_components/owl.carousel/src/scss/owl.video";
-
-// Variables
-@import "modules/variables";
 
 // Mixin
 @import "modules/mixins";

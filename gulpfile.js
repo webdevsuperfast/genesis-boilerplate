@@ -1,33 +1,24 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
-    sourcemaps = require('gulp-sourcemaps'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    plumber = require('gulp-plumber'),
     vinylpaths = require('vinyl-paths'),
+    cleancss = require('gulp-clean-css'),
     del = require('del');
 
 // CSS
 gulp.task('styles', function(){
     return gulp.src('sass/style.scss')
-        .pipe(plumber({
-          errorHandler: function (error) {
-            console.log(error.message);
-            this.emit('end');
-        }}))
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('style.css'))
-        .pipe(sourcemaps.init())
-        .pipe(cssnano())
-        .pipe(sourcemaps.write('.'))
+        .pipe(cleancss())
         .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Styles task complete' }));
 } );
@@ -39,16 +30,11 @@ gulp.task('lint', function(){
         .pipe(jshint.reporter('default'))
 });
 
-// Scripts
+// Theme JS
 gulp.task('source', function() {
     return gulp.src([
         'js/source/app.js'
     ])
-    .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
     .pipe(concat('app.js'))
     .pipe(gulp.dest('temp/js'))
     .pipe(rename({suffix: '.min'}))
@@ -57,15 +43,11 @@ gulp.task('source', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Shortcodes JS
 gulp.task('shortcode', function() {
     return gulp.src([
         'js/source/shortcode.js'
     ])
-    .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
     .pipe(concat('shortcode.js'))
     .pipe(gulp.dest('temp/js'))
     .pipe(rename({suffix: '.min'}))
@@ -74,6 +56,7 @@ gulp.task('shortcode', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Vendor JS
 gulp.task('vendor', function(){
     return gulp.src([
         'bower_components/veinjs/vein.js',
@@ -82,11 +65,6 @@ gulp.task('vendor', function(){
         'bower_components/owl.carousel/dist/owl.carousel.js',
         'js/vendor/*.js'
     ])
-    .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('temp/js'))
     .pipe(rename({suffix: '.min'}))

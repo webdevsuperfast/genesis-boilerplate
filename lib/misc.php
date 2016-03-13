@@ -5,7 +5,7 @@
  * @package      Genesis Boilerplate
  * @since        0.0.1
  * @link         http://www.recommendwp.com
- * @author       SuperFastBusiness <www.recommendwp.com>
+ * @author       RecommendWP <www.recommendwp.com>
  * @copyright    Copyright (c) 2016, RecommendWP
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
@@ -48,9 +48,9 @@ function gb_execute_php( $html ) {
 	return $html;
 }
 
-//* Conditional Statements
-add_action( 'genesis_meta', 'gb_do_meta' );
-function gb_do_meta() {
+//* Theme Settings
+add_action( 'get_header', 'gb_do_theme_settings' );
+function gb_do_theme_settings() {
 	if ( get_theme_mod( 'logo', false ) ) {
 		remove_action( 'genesis_header', 'genesis_do_header' );
 		add_action( 'genesis_header', 'gb_do_header' );
