@@ -1,24 +1,3 @@
-/*!
-Theme Name: Genesis Boilerplate
-Theme URI: http://www.recommendwp.com/
-Description: This is a child theme created for the Genesis Framework.
-Author: RecommendWP
-Author URI: http://www.recommend.com/
-Template: genesis
-Template Version: 2.2.6
-Tags: black, orange, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-License: GPL-2.0+
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
-
-// Normalize.css
-@import "../bower_components/support-for/sass/support-for";
-@import "../bower_components/normalize-scss/sass/normalize/variables";
-@import "../bower_components/normalize-scss/sass/normalize/vertical-rhythm";
-@import "../bower_components/normalize-scss/sass/normalize/normalize-mixin";
-
-@include normalize;
-
 // Variables
 @import "modules/variables";
 

@@ -212,8 +212,8 @@
 	(function fn() {
 		fn.now = +new Date;
 		$(window).load(function() {
-			if (+new Date - fn.now < 100) {
-				setTimeout(fn, 100);
+			if (+new Date - fn.now < 500) {
+				setTimeout(fn, 500);
 			}
 
 		});
