@@ -21,6 +21,7 @@ define( 'GB_THEME_VERSION', '0.0.1' );
 define( 'GB_LIB', CHILD_DIR . '/lib/' );
 define( 'GB_MODULES', GB_LIB . 'modules/' );
 define( 'GB_JS', CHILD_URL . '/js/' );
+define( 'GB_CSS', CHILD_URL . '/css/' );
 
 //* Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'gb_google_fonts' );

@@ -18,14 +18,18 @@ function gb_theme_scripts() {
 	if ( !is_admin() ) {
 		wp_register_script( 'vendor-js', GB_JS . 'vendor.min.js', array( 'jquery' ), null, true );
 		wp_enqueue_script( 'vendor-js' );
-		
-		wp_register_script( 'app-js', GB_JS . 'app.min.js', array( 'jquery' ), null, true );
+
+		wp_register_script( 'app-js', GB_JS . 'app.js', array( 'jquery' ), null, true );
 		wp_enqueue_script( 'app-js' );
 
-		wp_register_script( 'shortcode-js', GB_JS . 'shortcode.min.js', array( 'jquery' ), null, true );
-		
+		wp_register_script( 'shortcode-js', GB_JS . 'shortcode.js', array( 'jquery' ), null, true );
+
 		//* Deregister SuperFish Scripts
 		wp_deregister_script( 'superfish' );
 		wp_deregister_script( 'superfish-args' );
+
+		wp_enqueue_style( 'vendor-css', GB_CSS . 'vendor.min.css' );
+		wp_enqueue_style( 'app-css', GB_CSS . 'app.css' );
+
 	}
 }
