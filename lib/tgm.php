@@ -38,6 +38,12 @@ function gb_do_plugins_register() {
             'name'      => __( 'Black Studio TinyMCE Widget', 'gss' ),
             'slug'      => 'black-studio-tinymce-widget',
             'required'  => false
+        ),
+
+        array(
+            'name'      => __( 'Widget CSS Classes', 'gss' ),
+            'slug'      => 'widget-css-classes',
+            'required'  => false
         )
     );
 
