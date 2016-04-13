@@ -37,7 +37,6 @@ function gb_get_first_image() {
 
 //* Allow PHP Execution on Widgets
 add_filter( 'widget_text','gb_execute_php', 100 );
-
 function gb_execute_php( $html ) {
 	if( strpos( $html,"<"."?php" ) !== false ){
 		ob_start();
