@@ -27,7 +27,7 @@ function gb_siteorigin_settings( $defaults ) {
 	// Layout field
 	$defaults['mobile-width'] = 767;
 	$defaults['tablet-layout'] = true;
-	$defaults['tablet-width'] = 991;
+	$defaults['tablet-width'] = 1023;
 	
 	// Content field
 	$defaults['copy-content'] = true;
