@@ -3,6 +3,7 @@ $weights: (thin, 100), (extralight, 200), (light, 300), (normal, 400), (medium, 
 $styles: italic, oblique, normal, inherit, initial, unset;
 $transforms: capitalize, uppercase, lowercase, none, full-width;
 $alignments: none, left, right, center;
+$displays: inline, inline-block, table, table-cell, flex, none, unset;
 
 // Font Weight
 @each $weight, $value in $weights {
@@ -28,12 +29,16 @@ $alignments: none, left, right, center;
 // Text Alignment
 @each $alignment in $alignments {
 	.text-#{$alignment} {
-		text-align: none;
-		@include tablet {
-			text-align: $alignment;
-		}
+		text-align: $alignment;
 	}
 }
+
+// Display
+@each $display in $displays {
+	.display-#{$display} {
+		display: $display;
+	}
+} 
 
 //* Icons & Type Alignment Fix
 // @link http://snook.ca/archives/html_and_css/icons-and-type

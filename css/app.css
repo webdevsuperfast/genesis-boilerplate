@@ -3276,18 +3276,48 @@ html {
 }
 
 .text-left {
-    text-align: none;
+    text-align: left;
 }
 
 .text-right {
-    text-align: none;
+    text-align: right;
 }
 
 .text-center,
 .wp-caption-text,
 .date-panel .date-heading,
 .date-panel .date-body {
-    text-align: none;
+    text-align: center;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.display-table {
+    display: table;
+}
+
+.display-table-cell {
+    display: table-cell;
+}
+
+.display-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-unset {
+    display: unset;
 }
 
 .gb_text .icon-font,
@@ -7123,21 +7153,6 @@ li ul {
 }
 
 @media only screen and (min-width: 768px) {
-    .text-none {
-        text-align: none;
-    }
-    .text-left {
-        text-align: left;
-    }
-    .text-right {
-        text-align: right;
-    }
-    .text-center,
-    .wp-caption-text,
-    .date-panel .date-heading,
-    .date-panel .date-body {
-        text-align: center;
-    }
     .gallery-columns-2 .gallery-item {
         float: left;
         display: block;
@@ -7395,7 +7410,7 @@ li ul {
     }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
     .site-inner,
     .wrap {
         max-width: 940px;
