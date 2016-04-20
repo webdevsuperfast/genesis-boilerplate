@@ -129,6 +129,12 @@ if ( function_exists( 'shortcodes_ultimate' ) ) {
 //* TGM Plugin Activation
 require_once( GB_MODULES . 'class-tgm-plugin-activation.php' );
 
+//* Genesis Settings Override
+//* @link https://joshuadnelson.com/code/override-genesis-theme-settings/
+if ( !class_exists( 'JDN_Override_Genesis_Settings' ) ) {
+	require_once( GB_MODULES . 'genesis-settings-override.php' );
+}
+
 //* Include php files from lib folder
 //* @link https://gist.github.com/theandystratton/5924570
 foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
