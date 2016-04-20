@@ -30,7 +30,7 @@ $base-line-height: 26px;
 
 // Devices
 $largescreen: 1200px;
-$desktop: 992px;
+$desktop: 1024px;
 $tablet: 768px;
 $mobile: 767px;
 
@@ -151,3 +151,7 @@ $color_bg: $body-color;
 
 // Font Awesome
 $fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts";
+
+// Paths
+$image-path: "../images";
+$font-path: "../fonts/";
