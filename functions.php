@@ -92,8 +92,8 @@ add_theme_support( 'woocommerce' );
 add_filter( 'genesis_superfish_enabled', '__return_false' );
 
 //* Move Sidebar Secondary After Content
-remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
-add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
+// remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+// add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
 
 //* Remove Gallery Default Styles
 add_filter( 'use_default_gallery_style', '__return_false' );
