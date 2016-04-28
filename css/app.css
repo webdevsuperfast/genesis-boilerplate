@@ -6863,7 +6863,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
 
 
 /* ## Content Area
------------------------------------------------------------------------------- */
+----------------------------------------------------------------------------- */
 
 .entry {
     margin-bottom: 30px;
@@ -6997,10 +6997,6 @@ li ul {
 
 .comment-list li {
     margin-top: 30px;
-}
-
-.comment-list li li {
-    margin-right: -30px;
 }
 
 .comment-respond input[type="email"],
