@@ -85,9 +85,6 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
-//* Declare WooCommerce Support
-add_theme_support( 'woocommerce' );
-
 //* Disable the superfish script
 add_filter( 'genesis_superfish_enabled', '__return_false' );
 
@@ -97,9 +94,6 @@ add_filter( 'genesis_superfish_enabled', '__return_false' );
 
 //* Remove Gallery Default Styles
 add_filter( 'use_default_gallery_style', '__return_false' );
-
-//* Remove Woocommerce default CSS
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 // Remove WP Emoji
 // @http://www.denisbouquet.com/remove-wordpress-emoji-code/
