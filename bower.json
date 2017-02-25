@@ -13,15 +13,15 @@
   "homepage": "http://www.recommendwp.com",
   "dependencies": {
     "veinjs": "*",
-    "font-awesome": "~4.5.0",
-    "jquery.countdown": "~2.1.0",
-    "matchHeight": "~0.7.0",
+    "font-awesome": "~4.7.0",
+    "jquery.countdown": "~2.2.0",
+    "matchHeight": "~0.7.2",
     "normalize-scss": "normalize.scss#~4.0.3",
-    "slicknav": "~1.0.5",
-    "owl.carousel": "~2.0.0-beta.3",
-    "neat": "^1.7.4",
-    "bourbon": "^4.2.6",
+    "slicknav": "~1.0.10",
+    "owl.carousel": "~2.2.0",
+    "neat": "^2.0.0",
+    "bourbon": "^4.3.3",
     "smart-media-queries": "^1.1.0",
-    "normalize-css": "^4.0.0"
+    "normalize-css": "^5.0.0"
   }
 }
