@@ -20,8 +20,8 @@ define( 'GB_THEME_URL', 'http://www.recommendwp.com/' );
 define( 'GB_THEME_VERSION', '0.0.1' );
 define( 'GB_LIB', CHILD_DIR . '/lib/' );
 define( 'GB_MODULES', GB_LIB . 'modules/' );
-define( 'GB_JS', CHILD_URL . '/js/' );
-define( 'GB_CSS', CHILD_URL . '/css/' );
+define( 'GB_JS', CHILD_URL . '/assets/js/' );
+define( 'GB_CSS', CHILD_URL . '/assets/css/' );
 
 //* Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'gb_google_fonts' );
@@ -89,8 +89,8 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 add_filter( 'genesis_superfish_enabled', '__return_false' );
 
 //* Move Sidebar Secondary After Content
-// remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
-// add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
+remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
 
 //* Remove Gallery Default Styles
 add_filter( 'use_default_gallery_style', '__return_false' );
@@ -110,23 +110,6 @@ add_action( 'genesis_before_header', 'genesis_do_subnav' );
 //* Mr Image Resize
 if ( !function_exists( 'mr_image_resize' ) ) {
 	require_once( GB_MODULES . 'mr-image-resize.php' );
-}
-
-//* Customizer Helper
-require_once( GB_MODULES . 'customizer-library/customizer-library.php' );
-
-//* Shortcodes Ultimate
-if ( function_exists( 'shortcodes_ultimate' ) ) {
-	require_once( GB_MODULES . 'shortcodes-ultimate/shortcodes.php' );
-}
-
-//* TGM Plugin Activation
-require_once( GB_MODULES . 'class-tgm-plugin-activation.php' );
-
-//* Genesis Settings Override
-//* @link https://joshuadnelson.com/code/override-genesis-theme-settings/
-if ( !class_exists( 'JDN_Override_Genesis_Settings' ) ) {
-	require_once( GB_MODULES . 'genesis-settings-override.php' );
 }
 
 //* Include php files from lib folder
