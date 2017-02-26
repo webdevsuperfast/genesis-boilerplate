@@ -1,0 +1,167 @@
+/* ## Common Classes
+----------------------------------------------------------------------------- */
+
+.avatar {
+	float: left;
+	.alignleft &, .author-box & {
+		margin-right: $margin;
+	}
+	.alignright & {
+		margin-left: $margin;
+	}
+	.comment & {
+		margin: 0 $margin/2 $margin 0;
+	}
+}
+
+.breadcrumb {
+	margin-bottom: $margin;
+}
+
+.archive-description {
+	// @include pixel-rem(16, 26);
+	margin-bottom: $margin;
+}
+
+.author-box {
+	// @include pixel-rem(16);
+	background-color: $white;
+	margin-bottom: $margin;
+	padding: $margin;
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.author-box-title {
+	@include pixel-rem(16);
+	margin-bottom: 4px;
+}
+
+.search-form {
+	overflow: hidden;
+	.site-header & {
+		float: right;
+		margin-top: 12px;
+	}
+	.entry-content &, .site-header & {
+		width: 50%;
+	}
+}
+
+.genesis-nav-menu, .widget_search {
+	input[type="submit"] {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+.archive-title {
+	@include pixel-rem(20);
+}
+
+.entry-title {
+	@include pixel-rem(36);
+	a {
+		color: $body-color;
+		&:hover, &:focus {
+			color: $link-color;
+		}
+	}
+}
+
+.widget-title {
+	@include pixel-rem(18);
+	margin-bottom: 20px;
+	a {
+		color: $body-color;
+	}
+	.footer-widgets & {
+		color: $white;
+	}
+}
+
+a {
+	&.aligncenter {
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	&.alignnone {
+		display: inline-block;
+	}
+	&.alignleft, &.alignnone, &.alignright {
+		max-width: 100%;
+	}
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto $margin;
+}
+
+.alignnone {
+	margin-bottom: $margin;
+}
+
+img{
+	&.centered {
+		@extend .aligncenter;
+	}
+}
+
+img {
+	&.alignnone {
+		@extend .alignnone;
+	}
+}
+
+a, img, .wp-caption {
+	&.alignleft {
+		margin: 0 $margin $margin 0;
+	}
+	&.alignright {
+		margin: 0 0 $margin $margin;
+	}
+}
+
+.wp-caption-text {
+	@include pixel-rem(14, 18);
+	@extend .text-bold;
+	@extend .text-center;
+}
+
+.entry-content {
+	p {
+		&.wp-caption-text {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sticky {
+}
+
+.wp-audio-shortcode, .wp-playlist, .wp-video {
+	.entry-content & {
+		margin: 0 0 $margin;
+	}
+}

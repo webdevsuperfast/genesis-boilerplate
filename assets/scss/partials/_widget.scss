@@ -1,0 +1,45 @@
+/* ## Widgets
+----------------------------------------------------------------------------- */
+
+.widget {
+	word-wrap: break-word;
+	ol {
+		& > li {
+			list-style-position: inside;
+			list-style-type: decimal;
+			padding-left: 20px;
+			text-indent: -20px;
+		}
+	}
+	li {
+		li {
+			border: 0;
+			margin: 0 0 0 30px;
+			padding: 0;
+		}
+	}
+}
+
+.widget_calendar {
+	table {
+		width: 100%;
+	}
+	td, th {
+		text-align: center;
+	}
+}
+
+.entry {
+	.featured-content & {
+		border-bottom: 2px solid $border-featured-color;
+		margin-bottom: 20px;
+		padding: 0 0 24px;
+	}
+	.footer-widgets & {
+		border-bottom: 1px dotted #666;
+	}
+}
+
+.featured-content .entry-title {
+	@include pixel-rem(20);
+}

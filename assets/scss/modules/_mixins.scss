@@ -1,0 +1,25 @@
+// REM mixin
+@mixin pixel-rem($fs: $base-font-size, $lh: $base-font-size) {
+	font-size: strip($fs) * 1px;
+	font-size: strip($fs/$base-font-size) * 1rem;
+	@if $lh != $base-font-size {
+		line-height: strip($lh/$fs);
+	}
+}
+
+@mixin omega($selector: auto, $grid: $neat-grid) {
+	$_grid-gutter: _retrieve-neat-setting($grid, gutter);
+
+	&:last-child {
+		margin-#{_neat-opposite-direction($grid)}: $_grid-gutter;
+	}
+
+	@if $selector != auto {
+		&:nth-of-type(#{$selector}) {
+			margin-#{_neat-opposite-direction($grid)}: $_grid-gutter;
+		}
+		&:nth-of-type(#{$selector}+1) {
+			clear: _neat-float-direction($grid);
+		}
+	}
+}

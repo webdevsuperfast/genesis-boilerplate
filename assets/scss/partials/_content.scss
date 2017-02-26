@@ -1,0 +1,178 @@
+/* ## Content Area
+----------------------------------------------------------------------------- */
+
+.entry {
+	margin-bottom: $margin;
+	.content & {
+
+	}
+}
+
+.entry-content {
+	ol, ul {
+		margin-bottom: $margin;
+		margin-left: $margin;
+	}
+	ol {
+		& > li {
+			list-style-type: decimal;
+		}
+		ol {
+			margin-bottom: 0;
+		}
+	}
+	ul {
+		& > li {
+			list-style-type: disc;
+		}
+		ul {
+			margin-bottom: 0;
+		}
+	}
+	code {
+		background-color: $code-background;
+		color: $code-color;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+p {
+	.entry-meta {
+		@include pixel-rem(14);
+		margin-bottom: 0;
+	}
+}
+
+.entry-meta {
+	.entry-header & {
+		margin-bottom: $margin;
+	}
+	.entry-footer & {
+		padding-top: $margin;
+	}
+}
+
+.entry-categories, .entry-tags {
+	display: block;
+}
+
+.entry-comments-link {
+	&::before {
+		content: "\2014";
+		margin: 0 6px 0 2px;
+	}
+}
+
+.pagination {
+	clear: both;
+	margin: $margin 0;
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}
+
+.archive-pagination {
+	font-size: 0px;
+	li {
+		display: inline-block;
+		a {
+			@include pixel-rem(16, 16);
+			background-color: $body-color;
+			color: $white;
+			cursor: pointer;
+			display: inline-block;
+			margin-right: 5px;
+			padding: $margin/3 20px;
+			text-decoration: none;
+			&:hover, &:focus {
+				background-color: $link-color;
+			}
+		}
+		&.active {
+			a {
+				background-color: $link-color;
+			}
+		}
+	}
+}
+
+.comment-respond, .entry-comments, .entry-pings {
+	// background-color: $comment-background;
+	margin-bottom: $margin;
+}
+
+.comment-respond {
+	.entry-pings {
+		// padding: 40px 40px 16px;
+	}
+}
+
+.entry-comments {
+	// padding: 40px;
+	.comment-author {
+		margin-bottom: 0;
+		.says {
+			display: none;
+		}
+	}
+}
+
+.comment-header {
+	@include pixel-rem(16);
+}
+
+li {
+	&.comment {
+		// background-color: $body-background;
+		// border: 2px solid $white;
+		border-right: 0;
+	}
+	ul {
+		margin-left: $margin;
+	}
+}
+
+.comment-content {
+	clear: both;
+	word-wrap: break-word;
+}
+
+.comment-list {
+	li {
+		margin-top: $margin;
+		// padding: 32px;
+		li {
+			// margin-right: -($margin);
+		}
+	}
+}
+
+.comment-respond {
+	input[type="email"], input[type="text"], input[type="url"] {
+		width: 50%;
+	}
+	label {
+		display: block;
+		margin-right: $margin/2;
+	}
+}
+
+.entry-pings {
+	.reply {
+		display: none;
+	}
+}
+
+.bypostauthor {
+}
+
+.form-allowed-tags {
+	@include pixel-rem(16);
+	background-color: $allowed-tags-background;
+	padding: $margin;
+}

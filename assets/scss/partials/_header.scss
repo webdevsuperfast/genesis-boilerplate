@@ -1,0 +1,59 @@
+/* ## Site Header
+----------------------------------------------------------------------------- */
+
+.site-header {
+	background-color: $white;
+	padding: $margin 0;
+}
+
+.title-area {
+	.header-full-width & {
+		@include grid-column(12);
+	}
+}
+
+.site-title {
+	@include pixel-rem(32);
+	font-weight: 400;
+	line-height: 1.2;
+	a {
+		color: $body-color;
+		&:hover, &:focus {
+			color: $body-color;
+		}
+		.header-image & {
+			background: {
+				image: url(images/logo.png);
+				repeat: no-repeat;
+				position: left;
+			}
+			float: left;
+			min-height: 60px;
+			width: 100%;
+		}
+		img {
+			vertical-align: bottom;
+		}
+	}
+}
+
+.site-description {
+	@include pixel-rem(16);
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+.site-description, .site-title {
+	margin-bottom: 0;
+	.header-image & {
+		display: block;
+		text-indent: -9999px;
+	}
+}
+
+.widget-area {
+	.site-header & {
+		float: right;
+		text-align: right;
+	}
+}

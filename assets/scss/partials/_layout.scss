@@ -1,0 +1,130 @@
+/* ## Site Containers
+----------------------------------------------------------------------------- */
+
+.site-container, .site-header, .site-inner, .footer-widgets, .site-footer {
+	@include grid-container;
+}
+
+.site-inner, .wrap {
+	margin: 0 auto;
+	max-width: 90.625%;
+	@include grid-media($sm) {
+		max-width: 740px;
+	}
+	@include grid-media($md) {
+		max-width: 940px;
+	}
+	@include grid-media($lg) {
+		max-width: 1140px;
+	}
+}
+
+.site-inner {
+	@include clearfix;
+	padding: $margin*2 0;
+}
+
+/* ### Header */
+.site-header {
+	.title-area {
+		@include grid-column(12);
+		@include grid-media($sm) {
+			@include grid-column(4);
+		}
+	}
+	.widget-area {
+		@include grid-column(12);
+		@include grid-media($sm) {
+			@include grid-column(8);
+		}
+	}
+}
+
+/* ## Wrapping div for .content and .sidebar-primary
+----------------------------------------------------------------------------- */
+.content {
+	@include grid-column(12);
+	@include grid-media($sm) {
+		@include grid-column(8);
+	}
+	.content-sidebar-sidebar &, .sidebar-content-sidebar &, .sidebar-sidebar-content & {
+		@include grid-media($sm) {
+			@include grid-column(7);
+		}	
+	}
+	.sidebar-content & {
+		@include grid-media($sm) {
+			@include grid-shift(4);
+		}
+	}
+	.sidebar-content-sidebar & {
+		@include grid-media($sm) {
+			@include grid-shift(2);
+		}
+	}
+	.sidebar-sidebar-content & {
+		@include grid-media($sm) {
+			@include grid-shift(5);
+		}
+	}
+	.full-width-content & {
+		@include grid-column(12);
+	}
+}
+/* ### Primary Sidebar */
+
+.sidebar-primary {
+	@include grid-column(12);
+	@include grid-media($sm) {
+		@include grid-column(4);
+	}
+	.content-sidebar-sidebar &, .sidebar-content-sidebar &, .sidebar-sidebar-content & {
+		@include grid-column(12);
+		@include grid-media($sm) {
+			@include grid-column(3);
+		}
+	}
+	.sidebar-sidebar-content & {
+		@include grid-media($sm) {
+			@include grid-shift(-5);
+		}
+	}
+	.sidebar-content & {
+		@include grid-media($sm) {
+			@include grid-shift(-8);
+		}
+	}
+	.sidebar-content-sidebar & {
+		@include grid-media($sm) {
+			@include grid-shift(2);
+		}
+	}
+}
+
+/* ### Secondary Sidebar */
+.sidebar-secondary {
+	@include grid-column(12);
+	@include grid-media($sm) {
+		@include grid-column(2);
+	}
+	.sidebar-sidebar-content & {
+		@include grid-media($sm) {
+			@include grid-shift(-10);
+		}
+	}
+	.sidebar-content-sidebar & {
+		@include grid-media($sm) {
+			@include grid-shift(-10);
+		}
+	}
+}
+
+/* ### Footer Widgets */
+.footer-widgets {
+	.widget-area {
+		@include grid-column(12);
+		@include grid-media($sm) {
+			@include grid-column(4);
+		}
+	}
+}

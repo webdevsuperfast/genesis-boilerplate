@@ -1,0 +1,28 @@
+/* ## Sidebars
+----------------------------------------------------------------------------- */
+
+.sidebar {
+	@include pixel-rem(16);
+	li {
+		border-bottom: 1px dotted $sidebar-border-color;
+		margin-bottom: $margin/2;
+		padding-bottom: $margin/2;	
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	ul {
+		& > li {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.widget {
+		// background-color: $sidebar-widget-background;
+		margin-bottom: $margin;
+		// padding: 40px;
+	}
+}
