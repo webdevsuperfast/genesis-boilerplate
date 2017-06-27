@@ -15,7 +15,7 @@
 		max-width: 940px;
 	}
 	@include grid-media($lg) {
-		max-width: 1140px;
+		max-width: $width;
 	}
 }
 
@@ -27,15 +27,13 @@
 /* ### Header */
 .site-header {
 	.title-area {
-		@include grid-column(12);
 		@include grid-media($sm) {
-			@include grid-column(4);
+			@include column(4/12);
 		}
 	}
 	.widget-area {
-		@include grid-column(12);
 		@include grid-media($sm) {
-			@include grid-column(8);
+			@include column(8/12);
 		}
 	}
 }
@@ -43,78 +41,74 @@
 /* ## Wrapping div for .content and .sidebar-primary
 ----------------------------------------------------------------------------- */
 .content {
-	@include grid-column(12);
 	@include grid-media($sm) {
-		@include grid-column(8);
+		@include column(8/12);
 	}
 	.content-sidebar-sidebar &, .sidebar-content-sidebar &, .sidebar-sidebar-content & {
 		@include grid-media($sm) {
-			@include grid-column(7);
+			@include column(7/12);
 		}	
 	}
 	.sidebar-content & {
 		@include grid-media($sm) {
-			@include grid-shift(4);
+			@include move(4/12);
 		}
 	}
 	.sidebar-content-sidebar & {
 		@include grid-media($sm) {
-			@include grid-shift(2);
+			@include move(2/12);
 		}
 	}
 	.sidebar-sidebar-content & {
 		@include grid-media($sm) {
-			@include grid-shift(5);
+			@include move(5/12);
 		}
 	}
 	.full-width-content & {
-		@include grid-column(12);
+		width: 100%;
 	}
 }
 /* ### Primary Sidebar */
 
 .sidebar-primary {
-	@include grid-column(12);
 	@include grid-media($sm) {
-		@include grid-column(4);
+		@include column(4/12);
 	}
 	.content-sidebar-sidebar &, .sidebar-content-sidebar &, .sidebar-sidebar-content & {
-		@include grid-column(12);
 		@include grid-media($sm) {
-			@include grid-column(3);
+			@include column(3/12);
 		}
 	}
 	.sidebar-sidebar-content & {
 		@include grid-media($sm) {
-			@include grid-shift(-5);
+			@include move(-5/12);
 		}
 	}
 	.sidebar-content & {
 		@include grid-media($sm) {
-			@include grid-shift(-8);
+			@include move(-8/12);
 		}
 	}
 	.sidebar-content-sidebar & {
 		@include grid-media($sm) {
-			@include grid-shift(2);
+			@include move(2/12);
 		}
 	}
 }
 
 /* ### Secondary Sidebar */
 .sidebar-secondary {
-	@include grid-column(12);
 	@include grid-media($sm) {
-		@include grid-column(2);
+		@include column(2/12);
 	}
 	.sidebar-sidebar-content & {
 		@include grid-media($sm) {
-			@include grid-shift(-10);
+			@include move(-10/12);
 		}
 	}
 	.sidebar-content-sidebar & {
 		@include grid-media($sm) {
-			@include grid-shift(-10);
+			@include move(-10/12);
 		}
 	}
 }
@@ -122,9 +116,8 @@
 /* ### Footer Widgets */
 .footer-widgets {
 	.widget-area {
-		@include grid-column(12);
 		@include grid-media($sm) {
-			@include grid-column(4);
+			@include column(4/12);
 		}
 	}
 }
