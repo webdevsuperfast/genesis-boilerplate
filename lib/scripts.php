@@ -16,7 +16,9 @@ add_action( 'wp_enqueue_scripts', 'gb_theme_scripts' );
 function gb_theme_scripts() {
 	$version = wp_get_theme()->Version;
 	if ( !is_admin() ) {
-		wp_register_script( 'app-js', GB_JS . 'app.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,400italic,700,700italic', array(), $version );
+
+		wp_register_script( 'app-js', GB_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
 
 		//* Deregister SuperFish Scripts
