@@ -23,6 +23,7 @@
 
 (function($){
 	$(document).ready(function(){
+        $('.gallery').find('br').detach();
 	});
 
 	// Window load event with minimum delay
