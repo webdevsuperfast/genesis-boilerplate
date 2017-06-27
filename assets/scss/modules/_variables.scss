@@ -87,7 +87,7 @@ $avatar-margin-bottom: 24px;
 $nav-font-size: 16px;
 $nav-color: $body-color;
 $nav-padding-x: $margin;
-$nav-padding-y: 20px;
+$nav-padding-y: $margin/2;
 $nav-color-hover: $link-color;
 
 $subnav-background: $body-color;
@@ -95,8 +95,8 @@ $subnav-border-color: $body-color;
 $subnav-font-size: 16px;
 $subnav-color: $white;
 $subnav-color-hover: $link-color;
-$subnav-padding-x: $margin;
-$subnav-padding-y: 15px;
+$subnav-padding-x: $margin/2;
+$subnav-padding-y: $margin/2;
 
 $navextra-color: #fff;
 $navextra-padding-x: 0;
@@ -110,7 +110,7 @@ $nav-primary-color-hover: $link-color;
 $nav-primary-subnav-color: $white;
 $nav-primary-subnav-color-hover: $link-color;
 
-$nav-secondary-background: lighten($black, 50);
+$nav-secondary-background: lighten($body-color, 50);
 
 // Entry
 $entry-background: #fff;
