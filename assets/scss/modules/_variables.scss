@@ -134,6 +134,7 @@ $comment-background: $white;
 
 // Footer
 $footer-background: $white;
+$footer-font-size: 14px;
 
 // Sidebar
 $sidebar-border-color: #ddd;
@@ -165,4 +166,8 @@ $md: (
 
 $sm: (
 	media: $tablet
+);
+
+$xs: (
+	media: 'only screen and (max-width: 767px)'
 );

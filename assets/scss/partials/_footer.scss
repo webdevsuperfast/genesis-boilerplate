@@ -2,8 +2,8 @@
 ----------------------------------------------------------------------------- */
 
 .site-footer {
-	@include pixel-rem(14);
-	background-color: $white;
+	@include pixel-rem($footer-font-size);
+	background-color: $footer-background;
 	line-height: 1;
 	padding: $margin 0;
 	text-align: center;
