@@ -12,7 +12,7 @@
   "license": "WTFPL",
   "homepage": "http://www.recommendwp.com",
   "dependencies": {
-    "neat": "^2.0.0",
+    "neat": "^2.1.0",
     "bourbon": "^4.3.4",
     "sass-flex-mixin": "^1.0.3",
     "jeet": "jeet.gs#^7.1.0"
