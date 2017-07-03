@@ -191,11 +191,3 @@
 		}
 	}
 }
-
-/* ### Slick Navigation */
-.slicknav_menu {
-    display: block;
-    @include grid-media($md) {
-    	display: none;
-    }
-}
