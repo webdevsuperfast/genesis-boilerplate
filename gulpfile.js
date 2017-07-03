@@ -48,7 +48,8 @@ gulp.task('lint', function(){
 // Scripts
 gulp.task('scripts', function() {
     return gulp.src([
-        'assets/js/source/*.js'
+        'assets/js/source/*.js',
+        'assets/js/vendor/*.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){
