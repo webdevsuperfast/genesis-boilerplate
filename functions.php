@@ -101,11 +101,6 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav' );
 
-//* Mr Image Resize
-if ( !function_exists( 'mr_image_resize' ) ) {
-	require_once( GB_MODULES . 'mr-image-resize.php' );
-}
-
 //* Include php files from lib folder
 //* @link https://gist.github.com/theandystratton/5924570
 foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {

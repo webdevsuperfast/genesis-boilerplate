@@ -121,11 +121,6 @@ function gb_remove_cssjs_ver( $src ) {
     return $src;
 }
 
-//* Mr Image Resize functionn
-function gb_thumb( $url, $width, $height=0, $align='' ) {
-    return mr_image_resize( $url, $width, $height, true, $align, false );
-}
-
 //* Setup WooCommerce for Genesis
 function gb_woocommerce_setup_genesis() {
     woocommerce_content();
