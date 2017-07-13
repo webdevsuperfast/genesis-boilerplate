@@ -147,6 +147,10 @@
 /* ### Primary Navigation */
 .nav-primary {
 	background-color: $nav-primary-background;
+	display: none;
+	@include grid-media($sm) {
+		display: block;
+	}
 	.genesis-nav-menu {
 		a {
 			color: $nav-primary-color;
