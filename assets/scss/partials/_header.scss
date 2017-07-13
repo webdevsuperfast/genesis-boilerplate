@@ -6,12 +6,6 @@
 	padding: $margin 0;
 }
 
-.title-area {
-	.header-full-width & {
-		@include grid-column(12);
-	}
-}
-
 .site-title {
 	@include pixel-rem(32);
 	font-weight: 400;

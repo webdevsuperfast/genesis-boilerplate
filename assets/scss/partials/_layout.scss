@@ -30,6 +30,9 @@
 		@include grid-media($sm) {
 			@include column(4/12);
 		}
+		.header-full-width & {
+			width: 100%;
+		}
 	}
 	.widget-area {
 		@include grid-media($sm) {
