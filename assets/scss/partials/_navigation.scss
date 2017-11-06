@@ -60,6 +60,7 @@
 			position: relative;
 			word-wrap: break-word;
 			@include grid-media($sm) {
+				box-sizing: border-box;
 				width: 200px;
 			}
 			&:hover, &:focus {
