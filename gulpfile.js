@@ -19,13 +19,16 @@ var gulp = require('gulp'),
 
 // CSS
 gulp.task('styles', function(){
+    var cssStream = gulp.src('node_modules/normalize.css/normalize.css')
+        .pipe(wait(400))
+        .pipe(concat('normalize.css'))
 
     var sassStream = gulp.src('assets/scss/style.scss')
         .pipe(wait(400))
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(concat('app.scss'))
     
-    var mergeStream = merge(sassStream)
+    var mergeStream = merge(cssStream, sassStream)
         .pipe(concat('app.css'))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(cmq())
