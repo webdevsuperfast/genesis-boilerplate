@@ -2,15 +2,12 @@
   "name": "genesis-boilerplate",
   "version": "0.0.1",
   "description": "Just another genesis child theme built on Sass and Bourbon.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webdevsuperfast/genesis-boilerplate.git"
-  },
+  "repository": "git+https://github.com/webdevsuperfast/genesis-boilerplate.git",
   "keywords": [
     "genesis",
     "wordpress"
   ],
-  "author": "RecommendWP",
+  "author": "Rotsen Mark Acob",
   "license": "WTFPL",
   "homepage": "https://github.com/webdevsuperfast/genesis-boilerplate#readme",
   "devDependencies": {
@@ -39,5 +36,7 @@
     "bourbon-neat": "2.1.0",
     "jeet": "^7.2.0",
     "sass-flex-mixin": "^1.0.3"
-  }
+  },
+  "main": "index.js",
+  "private": true
 }
