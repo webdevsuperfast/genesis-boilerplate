@@ -6,6 +6,7 @@
 }
 
 .site-inner, .wrap {
+	@include grid-container;
 	margin: 0 auto;
 	max-width: 90.625%;
 	@include grid-media($sm) {
