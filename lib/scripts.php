@@ -20,7 +20,7 @@ function gb_theme_scripts() {
 		wp_enqueue_style( 'dashicons' );
 
 		// Google Fonts
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,400italic,700,700italic', array(), $version );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Work+Sans:300,400', array(), $version );
 
 		// Responsive Menu
 		wp_register_script( 'app-menu-js', GB_JS . 'responsive-menus.min.js', array( 'jquery' ), $version, true );
