@@ -2,16 +2,16 @@
 @import "modules/variables";
 
 // Bourbon
-@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../node_modules/bourbon/app/assets/stylesheets/_bourbon.scss";
 
 // Neat
-@import "../../bower_components/neat/core/neat";
+@import "../../node_modules/bourbon-neat/core/_neat.scss";
 
 // Jeet.gs
-@import "../../bower_components/jeet/jeet.scss";
+@import "../../node_modules/jeet/jeet.scss";
 
 // Sass Flex Mixin
-@import "../../bower_components/sass-flex-mixin/flex";
+@import "../../node_modules/sass-flex-mixin/_flex.scss";
 
 // Functions
 @import "modules/functions";
