@@ -4,9 +4,9 @@
  *
  * @package      Genesis Boilerplate
  * @since        0.0.1
- * @link         http://www.recommendwp.com
- * @author       RecommendWP <www.recommendwp.com>
- * @copyright    Copyright (c) 2016, RecommendWP
+ * @link         http://rotsenacob.com
+ * @author       Rotsen Mark Acob <rotsenacob.com>
+ * @copyright    Copyright (c) 2016, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */

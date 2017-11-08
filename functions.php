@@ -4,9 +4,9 @@
  *
  * @package      Genesis Boilerplate
  * @since        0.0.1
- * @link         http://www.recommendwp.com
- * @author       RecommendWP <www.recommendwp.com>
- * @copyright    Copyright (c) 2016, RecommendWP
+ * @link         http://rotsenacob.com
+ * @author       Rotsen Mark Acob <rotsenacob.com>
+ * @copyright    Copyright (c) 2016, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
@@ -16,7 +16,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 
 //* Child theme (do not remove)
 define( 'GB_THEME_NAME', 'Genesis Boilerplate' );
-define( 'GB_THEME_URL', 'http://www.recommendwp.com/' );
+define( 'GB_THEME_URL', 'http://rotsenacob.com/' );
 define( 'GB_THEME_VERSION', '0.0.1' );
 define( 'GB_LIB', CHILD_DIR . '/lib/' );
 define( 'GB_MODULES', GB_LIB . 'modules/' );
