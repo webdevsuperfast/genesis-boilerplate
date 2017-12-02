@@ -143,8 +143,9 @@ img {
 }
 
 .gallery-item {
-	float: left;
+	// float: left;
 	margin: 0 0 $margin;
+	text-align: center;
 	text-align: center;
 	.gallery-columns-2 & {
 		@include grid-media($sm) {
@@ -185,6 +186,12 @@ img {
 		@include grid-media($sm) {
 			@include column(1/9, $cycle: 9);
 		}
+	}
+	.wp-caption-text {
+		margin-left: 0;
+	}
+	.gallery-icon {
+		text-align: center;
 	}
 }
 
