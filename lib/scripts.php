@@ -19,9 +19,6 @@ function gb_theme_scripts() {
 		// Dashicons
 		wp_enqueue_style( 'dashicons' );
 
-		// Google Fonts
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Work+Sans:300,400', array(), $version );
-
 		// Responsive Menu
 		wp_register_script( 'app-menu-js', GB_JS . 'responsive-menus.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-menu-js' );
@@ -44,6 +41,12 @@ function gb_theme_scripts() {
 		// Theme JS
 		wp_register_script( 'app-js', GB_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
+
+		$webfont = array(
+			'src' => GB_JS . 'webfontloader.min.js'
+		);
+
+		wp_localize_script( 'app-js', 'webfont', $webfont );
 
 		//* Deregister SuperFish Scripts
 		wp_deregister_script( 'superfish' );
