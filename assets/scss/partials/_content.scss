@@ -2,9 +2,11 @@
 ----------------------------------------------------------------------------- */
 
 .entry {
-	margin-bottom: $margin;
-	.content & {
-
+	.single & {
+		margin-bottom: $margin;
+	}
+	.archive &, .search &, .blog & {
+		margin-bottom: $margin;
 	}
 }
 
@@ -41,7 +43,7 @@
 }
 
 p {
-	.entry-meta {
+	&.entry-meta {
 		@include pixel-rem(14);
 		margin-bottom: 0;
 	}
@@ -82,38 +84,31 @@ p {
 		display: inline-block;
 		a {
 			@include pixel-rem(16, 16);
-			background-color: $body-color;
-			color: $white;
+			background-color: $pagination-background;
+			color: $pagination-color;
 			cursor: pointer;
 			display: inline-block;
 			margin-right: 5px;
-			padding: $margin/3 20px;
+			padding: $pagination-padding-y $pagination-padding-x;
 			text-decoration: none;
 			&:hover, &:focus {
-				background-color: $link-color;
+				background-color: $pagination-background-hover;
 			}
 		}
 		&.active {
 			a {
-				background-color: $link-color;
+				background-color: $pagination-background-hover;
 			}
 		}
 	}
 }
 
 .comment-respond, .entry-comments, .entry-pings {
-	// background-color: $comment-background;
+	@include clearfix;
 	margin-bottom: $margin;
 }
 
-.comment-respond {
-	.entry-pings {
-		// padding: 40px 40px 16px;
-	}
-}
-
 .entry-comments {
-	// padding: 40px;
 	.comment-author {
 		margin-bottom: 0;
 		.says {
@@ -128,8 +123,6 @@ p {
 
 li {
 	&.comment {
-		// background-color: $body-background;
-		// border: 2px solid $white;
 		border-right: 0;
 	}
 	ul {
@@ -145,19 +138,18 @@ li {
 .comment-list {
 	li {
 		margin-top: $margin;
-		// padding: 32px;
-		li {
-			// margin-right: -($margin);
-		}
 	}
 }
 
 .comment-respond {
 	input[type="email"], input[type="text"], input[type="url"] {
-		width: 50%;
+		@include grid-media($sm) {
+			width: 50%;
+		}
 	}
 	label {
 		display: block;
+		font-weight: $heading-font-weight;
 		margin-right: $margin/2;
 	}
 }

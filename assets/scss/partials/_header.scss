@@ -15,16 +15,6 @@
 		&:hover, &:focus {
 			color: $body-color;
 		}
-		.header-image & {
-			background: {
-				image: url(images/logo.png);
-				repeat: no-repeat;
-				position: left;
-			}
-			float: left;
-			min-height: 60px;
-			width: 100%;
-		}
 		img {
 			vertical-align: bottom;
 		}

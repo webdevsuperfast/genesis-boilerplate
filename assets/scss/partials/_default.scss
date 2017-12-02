@@ -8,18 +8,14 @@ html {
 body {
 	// Chrome Fix
 	& > div {
-		@include pixel-rem(16, $base-line-height);
+		@include pixel-rem($body-font-size, $base-line-height);
 	}
-	@include pixel-rem(16, $base-line-height);
+	@include pixel-rem($body-font-size, $base-line-height);
 	background-color: $body-background;
 	color: $body-color;
 	font-family: $body-font;
 	font-weight: $body-font-weight;
 	margin: 0;
-	overflow-x: hidden;
-	& > .site-container {
-		overflow-x: hidden;
-	}
 }
 
 a,
@@ -31,7 +27,6 @@ input[type="submit"],
 textarea:focus,
 .button,
 .gallery img {
-	// @include transition(all, 100ms, ease-in-out);
 	transition: all 100ms ease-in-out;
 }
 
@@ -39,8 +34,8 @@ a {
 	color: $link-color;
 	text-decoration: none;
 	&:hover, &:focus {
-		color: $body-color;
-		text-decoration: none;
+		color: darken($link-color, 0.15);
+		text-decoration: underline;
 	}
 }
 
@@ -193,24 +188,19 @@ img {
 	}
 }
 
-input,
-select,
-textarea {
+#{$all-text-inputs} {
 	@include pixel-rem(16);
 	background-color: $input-background;
-	border: 1px solid $border-color;
-	color: $body-color;
-	font-family: $body-font;
-	font-weight: $body-font-weight;
+	border: 1px solid $input-border-color;
+	color: $input-color;
+	font-family: $input-font;
+	font-weight: $input-font-weight;
 	padding: $input-padding-y $input-padding-x;
 	width: 100%;
 }
 
-input, textarea {
-	&:focus {
-		border-color: $border-color-hover;
-		outline: none;
-	}
+#{$all-text-inputs-hover}, #{$all-text-inputs-focus} {
+	outline: none;
 }
 
 input[type="checkbox"],
@@ -220,14 +210,14 @@ input[type="radio"] {
 }
 
 ::-moz-placeholder {
-	color: $body-color;
-	font-weight: 300;
+	color: $placeholder-color;
+	font-weight: $placeholder-font-weight;
 	opacity: 1;
 }
 
 ::-webkit-input-placeholder {
-	color: $body-color;
-	font-weight: 300;
+	color: $placeholder-color;
+	font-weight: $placeholder-font-weight;
 }
 
 button,
@@ -235,8 +225,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	@include pixel-rem(16);
-	background-color: $body-color;
+	@extend %button;
+	@include pixel-rem($button-font-size);
+	background-color: $button-background;
 	border: 0;
 	color: $button-color;
 	cursor: pointer;
@@ -246,31 +237,9 @@ input[type="submit"],
 	text-transform: uppercase;
 	width: auto;
 	&:hover, &:focus {
-		background-color: $link-color;
+		background-color: $button-background-hover;
+		color: $button-color-hover;
 	}
-}
-
-.entry-content {
-	.button{
-		&:hover, &:focus {
-			color: $entry-background;
-		}
-	}
-}
-
-.footer-widgets {
-	button, input[type="button"], input[type="reset"], input[type="submit"], .button {
-		background-color: $link-color;
-		color: $button-color;
-		&:hover, &:focus {
-			background-color: $button-color;
-			color: $body-color;
-		}
-	}
-}
-
-.button {
-	display: inline-block;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -282,12 +251,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	line-height: 2;
-	margin-bottom: 40px;
+	margin-bottom: $table-margin;
 	width: 100%;
 }
 
 tbody {
-	border-bottom: 1px solid $border-color;
+	border-bottom: 1px solid $table-border-color;
 }
 
 td, th {
@@ -295,8 +264,8 @@ td, th {
 }
 
 td {
-	border-top: 1px solid $border-color;
-	padding: 6px 0;
+	border-top: 1px solid $table-border-color;
+	padding: $table-padding-y $table-padding-x;
 }
 
 th {

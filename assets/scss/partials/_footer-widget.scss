@@ -2,6 +2,7 @@
 ----------------------------------------------------------------------------- */
 
 .footer-widgets {
+	@include pixel-rem($footer-widget-font-size);
 	background-color: $footer-widget-background;
 	color: $footer-widget-color;
 	padding: $margin*2 0;
@@ -19,13 +20,13 @@
 		margin-bottom: $margin/2;
 		padding-bottom: $margin/2;
 		&:last-child {
-			border-bottom-color: rgba($black, 0);
+			border-bottom: none;
 		}
 	}
 	.widget {
 		margin-bottom: $margin;
-		&-title,&title {
-			@extend .text-uppercase;
+		.widgettitle {
+			text-transform: uppercase;
 		}
 		&:last-child {
 			margin-bottom: 0;
@@ -44,7 +45,7 @@
 				display: block;
 				font-family: $heading-font;
 				&:hover, &:focus {
-					color: $link-color;
+					color: darken($white, 15);
 				} 
 			}
 			span {

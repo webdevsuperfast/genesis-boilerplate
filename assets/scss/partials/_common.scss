@@ -19,12 +19,10 @@
 }
 
 .archive-description {
-	// @include pixel-rem(16, 26);
 	margin-bottom: $margin;
 }
 
 .author-box {
-	// @include pixel-rem(16);
 	background-color: $white;
 	margin-bottom: $margin;
 	padding: $margin;
@@ -145,8 +143,7 @@ a, img, .wp-caption {
 
 .wp-caption-text {
 	@include pixel-rem(14, 18);
-	@extend .text-bold;
-	@extend .text-center;
+	text-align: center;
 }
 
 .entry-content {
@@ -155,9 +152,6 @@ a, img, .wp-caption {
 			margin-bottom: 0;
 		}
 	}
-}
-
-.sticky {
 }
 
 .wp-audio-shortcode, .wp-playlist, .wp-video {
