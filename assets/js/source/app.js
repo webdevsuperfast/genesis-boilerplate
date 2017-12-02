@@ -1,25 +1,16 @@
-// Avoid `console` errors in browsers that lack a console.
+WebFontConfig = {
+    google: { families: [ 'Work+Sans:300,400' ] }
+};
+var $source = webfont.src;
 (function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
+    var wf = document.createElement('script');
+    wf.src = $source;
+    wf.type = 'text/javascript';
+    wf.async = 'true';
 
-    while (length--) {
-        method = methods[length];
-
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
-    }
-}());
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
 
 (function($){
 	$(document).ready(function(){
