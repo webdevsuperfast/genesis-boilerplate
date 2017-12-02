@@ -36,7 +36,8 @@
     "bourbon-neat": "2.1.0",
     "jeet": "^7.2.0",
     "normalize.css": "^7.0.0",
-    "sass-flex-mixin": "^1.0.3"
+    "sass-flex-mixin": "^1.0.3",
+    "webfontloader": "^1.6.28"
   },
   "main": "index.js",
   "private": true
