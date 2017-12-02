@@ -34,7 +34,9 @@ gulp.task('styles', function(){
         .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('app.css'))
-        .pipe(cleancss())
+        .pipe(cleancss({
+            level: {1: {specialComments: 0 }}
+        }))
         .pipe(gulp.dest('assets/css'))
         .pipe(notify({ message: 'Styles task complete' }));
     
@@ -52,7 +54,8 @@ gulp.task('lint', function(){
 gulp.task('scripts', function() {
     return gulp.src([
         'assets/js/source/*.js',
-        'assets/js/vendor/*.js'
+        'assets/js/vendor/*.js',
+        'node_modules/webfontloader/webfontloader.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){
