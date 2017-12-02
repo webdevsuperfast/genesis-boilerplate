@@ -7,7 +7,7 @@ $body-font-size: 16px;
 $body-font: "Work Sans", sans-serif;
 $body-line-height: 1.625;
 $body-background: $white;
-$body-color: #333;
+$body-color: #2c3e50;
 $body-font-weight: 300;
 
 // Heading
@@ -17,7 +17,7 @@ $heading-color: $body-color;
 $heading-line-height: 1.2;
 
 // Link
-$link-color: #c3251d;
+$link-color: #3498db;
 $link-color-hover: $body-color;
 
 // Layout
@@ -25,20 +25,14 @@ $margin: 30px;
 $width: 1140px;
 
 // Base
-$base-font-size: 16px;
+$base-font-size: 10px;
 $base-line-height: 26px;
 
-// Devices
-$largescreen: 1200px;
-$desktop: 1024px;
-$tablet: 768px;
-$mobile: 767px;
-
 // Border
-$border-color: #ddd;
-$border-color-hover: #999;
-$border-featured-color: #f5f5f5;
-$outline-color: #ccc;
+$border-color: #ecf0f1;
+$border-color-hover: #bdc3c7;
+$border-featured-color: #ecf0f1;
+$outline-color: #bdc3c7;
 
 // Horizontal Rule
 $horizontal-rule-color: $border-color;
@@ -48,22 +42,29 @@ $gallery-border-color: $border-color;
 $gallery-border-color-hover: $border-color-hover;
 
 // Inputs
-$input-background: lighten($black, 95);
+$input-font: $body-font;
+$input-font-weight: $body-font-weight;
+$input-background: #ecf0f1;
 $input-border-color: $border-color;
 $input-color: $body-color;
 $input-padding-x: $margin/2;
 $input-padding-y: $margin/3;
 $input-border-color-hover: $border-color-hover;
+
+// Placeholders
 $placeholder-color: $body-color;
+$placeholder-font: $body-font;
+$placeholder-font-weight: $body-font-weight;
 
 // Buttons
-$button-background: $body-color;
+$button-background: $link-color;
 $button-color: $white;
+$button-font-size: $body-font-size;
 $button-font: $heading-font;
-$button-font-weight: 700;
+$button-font-weight: $heading-font-weight;
 $button-padding-y: 16px;
 $button-padding-x: 24px;
-$button-background-hover: $link-color;
+$button-background-hover: darken($link-color, 15);
 $button-color-hover: #fff;
 
 // Table
@@ -126,6 +127,7 @@ $code-color: #ddd;
 // Pagination
 $pagination-color: $white;
 $pagination-background: $body-color;
+$pagination-background-hover: $link-color;
 $pagination-padding-x: 12px;
 $pagination-padding-y: 8px;
 
@@ -141,6 +143,7 @@ $sidebar-border-color: #ddd;
 $sidebar-widget-background: $white;
 
 // Footer Widget
+$footer-widget-font-size: $body-font-size;
 $footer-widget-background: $body-color;
 $footer-widget-color: #aaa;
 $footer-widget-border-color: $body-color;
@@ -156,18 +159,42 @@ $neat-grid: (
 	margin: $margin
 );
 
-$lg: (
-	media: $largescreen
-);
-
-$md: (
-	media: $desktop
-);
-
-$sm: (
-	media: $tablet
+$medias: (
+    xs: 575px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
 );
 
 $xs: (
-	media: 'only screen and (max-width: 767px)'
+    media: 'only screen and (max-width: 575px)'
+);
+
+$sm-max: (
+    media: 'only screen and (max-width: 767px)'
+);
+
+$sm: (
+    media: map-get($medias, sm)
+);
+
+$md-max: (
+    media: 'only screen and (max-width: 991px)'
+);
+
+$md: (
+    media: map-get($medias, md)
+);
+
+$lg-max: (
+    media: 'only screen and (max-width: 1199px)'
+);
+
+$lg: (
+    media: map-get($medias, lg)
+);
+
+$xl: (
+    media: map-get($medias, xl)
 );
