@@ -61,12 +61,7 @@
 	}
 }
 
-.archive-title {
-	@include pixel-rem(20);
-}
-
 .entry-title {
-	@include pixel-rem(36);
 	a {
 		color: $body-color;
 		&:hover, &:focus {
@@ -75,9 +70,8 @@
 	}
 }
 
-.widget-title {
-	@include pixel-rem(18);
-	margin-bottom: 20px;
+.widgettitle {
+	margin-bottom: $margin/2;
 	a {
 		color: $body-color;
 	}
