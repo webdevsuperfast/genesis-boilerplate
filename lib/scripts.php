@@ -43,7 +43,7 @@ function gb_theme_scripts() {
 		wp_enqueue_script( 'app-js' );
 
 		$webfont = array(
-			'src' => GB_JS . 'webfontloader.min.js'
+			'src' => 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' // GB_JS . 'webfontloader.min.js'
 		);
 
 		wp_localize_script( 'app-js', 'webfont', $webfont );
