@@ -35,18 +35,6 @@ function gb_get_first_image() {
 	return $first_img;
 }
 
-//* Allow PHP Execution on Widgets
-add_filter( 'widget_text','gb_execute_php', 100 );
-function gb_execute_php( $html ) {
-	if( strpos( $html,"<"."?php" ) !== false ){
-		ob_start();
-		eval( "?".">".$html );
-		$html=ob_get_contents();
-		ob_end_clean();
-	}
-	return $html;
-}
-
 //* This will occur when the comment is posted
 function gb_comment_post( $incoming_comment ) {
     // convert everything in a comment to display literally
