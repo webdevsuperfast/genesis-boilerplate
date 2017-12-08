@@ -44,9 +44,9 @@
 				color: $white;
 				display: block;
 				font-family: $heading-font;
-				&:hover, &:focus {
-					color: darken($white, 15);
-				} 
+				&:hover {
+					color: $link-color;
+				}
 			}
 			span {
 				display: block;
