@@ -57,8 +57,3 @@ function gb_remove_cssjs_ver( $src ) {
     $src = remove_query_arg( 'ver', $src );
     return $src;
 }
-
-//* Setup WooCommerce for Genesis
-function gb_woocommerce_setup_genesis() {
-    woocommerce_content();
-}
