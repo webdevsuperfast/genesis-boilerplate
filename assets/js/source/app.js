@@ -1,5 +1,5 @@
 WebFontConfig = {
-    google: { families: [ 'Work+Sans:300,400' ] }
+    google: { families: [ 'Source+Sans+Pro:300,300i,400,400i' ] }
 };
 var $source = webfont.src;
 (function() {
