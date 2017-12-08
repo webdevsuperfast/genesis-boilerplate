@@ -54,8 +54,7 @@ gulp.task('lint', function(){
 gulp.task('scripts', function() {
     return gulp.src([
         'assets/js/source/*.js',
-        'assets/js/vendor/*.js',
-        'node_modules/webfontloader/webfontloader.js'
+        'assets/js/vendor/*.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){
