@@ -36,3 +36,77 @@
 #wpstats {
 	display: none;
 }
+
+/* ## Contact Form 7
+----------------------------------------------------------------------------- */
+.wpcf7 {
+	br {
+		display: none;
+	}
+	label {
+		margin-bottom: $margin/3;
+		font-family: $heading-font;
+		font-weight: $heading-font-weight;
+	}
+	.wpcf7-form-control-wrap {
+		@include clearfix;
+		display: block;
+	}
+	.wpcf7-submit {
+
+	}
+	.wpcf7-validation-errors {
+		@include pixel-rem(12);
+		border: none;
+		color: $white;
+		background: $heading-color;
+		margin: 0;
+		padding: 0;
+		margin-top: $margin/2;
+		padding: $margin/3 $margin/2;
+	}
+	.wpcf7-response-output {
+		margin: 0;
+		padding: 0;
+		@include pixel-rem(12);
+		font-weight: $body-font-weight;
+		border: none;
+		background: $link-color;
+		color: $white;
+		margin-top: $margin/2;
+		padding: $margin/3 $margin/2;
+	}
+	.wpcf7-mail-sent-ok {
+		margin: 0;
+		padding: 0;
+		@include pixel-rem(12);
+		font-weight: $body-font-weight;
+		border: none;
+		background: $link-color;
+		color: $white;
+		margin-top: $margin/2;
+		padding: $margin/3 $margin/2;
+	}
+	.wpcf7-not-valid-tip {
+		@include pixel-rem(12);
+		font-weight: $body-font-weight;
+		border: none;
+		background: #e74c3c;
+		color: $white;
+		margin-top: $margin/2;
+		padding: $margin/3 $margin/2;
+	}
+	.wpcf7-mail-sent-ng {
+		@include pixel-rem(12);
+		font-weight: $body-font-weight;
+		border: none;
+		background: #e74c3c;
+		color: $white;
+		margin: 0;
+		margin-top: $margin/2;
+		padding: $margin/3 $margin/2;
+	}
+	span.required {
+		color: #e74c3c;
+	}
+}
