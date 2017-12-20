@@ -6,16 +6,17 @@ html {
 }
 
 body {
-	// Chrome Fix
-	& > div {
-		@include pixel-rem($body-font-size, $base-line-height);
-	}
 	@include pixel-rem($body-font-size, $base-line-height);
 	background-color: $body-background;
 	color: $body-color;
 	font-family: $body-font;
 	font-weight: $body-font-weight;
 	margin: 0;
+	
+	// Chrome Fix
+	& > div {
+		@include pixel-rem($body-font-size, $base-line-height);
+	}
 }
 
 a,
@@ -87,7 +88,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font;
 	font-weight: $heading-font-weight;
 	line-height: 1.2;
-	margin: 0 0 10px;
+	margin: 0;
+	margin-bottom: 10px;
 }
 
 h1 {
@@ -143,7 +145,6 @@ img {
 }
 
 .gallery-item {
-	// float: left;
 	margin: 0 0 $margin;
 	text-align: center;
 	text-align: center;
