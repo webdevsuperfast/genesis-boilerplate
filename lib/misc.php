@@ -57,3 +57,12 @@ function gb_remove_cssjs_ver( $src ) {
     $src = remove_query_arg( 'ver', $src );
     return $src;
 }
+
+//* Remove header image class
+add_filter( 'body_class', function( $classes ) {
+	if ( in_array( 'header-image', $classes ) ) {
+		unset( $classes[array_search( 'header-image', $classes )] );
+	}
+
+	return $classes;
+} );
