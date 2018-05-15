@@ -1,17 +1,3 @@
-WebFontConfig = {
-    google: { families: [ 'Source+Sans+Pro:300,300i,400,400i' ] }
-};
-var $source = webfont.src;
-(function() {
-    var wf = document.createElement('script');
-    wf.src = $source;
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-})();
-
 (function($){
 	$(document).ready(function(){
         $('.gallery').find('br').detach();

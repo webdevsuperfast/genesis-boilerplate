@@ -42,12 +42,6 @@ function gb_theme_scripts() {
 		wp_register_script( 'app-js', GB_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
 
-		$webfont = array(
-			'src' => 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' // GB_JS . 'webfontloader.min.js'
-		);
-
-		wp_localize_script( 'app-js', 'webfont', $webfont );
-
 		//* Deregister SuperFish Scripts
 		wp_deregister_script( 'superfish' );
 		wp_deregister_script( 'superfish-args' );
