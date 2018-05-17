@@ -148,10 +148,6 @@
 /* ### Primary Navigation */
 .nav-primary {
 	background-color: $nav-primary-background;
-	display: none;
-	@include grid-media($sm) {
-		display: block;
-	}
 	.genesis-nav-menu {
 		a {
 			color: $nav-primary-color;
@@ -229,4 +225,40 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+/* ## Slick Navigation
+----------------------------------------------------------------------------- */
+.slicknav_menu {
+	padding: 0;
+	background: $nav-primary-background;
+	.slicknav_menutxt {
+		text-transform: uppercase;
+	}
+}
+
+.slicknav_nav {
+	a {
+		@include pixel-rem($body-font-size);
+		color: $nav-primary-color;
+		&:hover, &:focus {
+			border-radius: none;
+			background: none;
+			text-decoration: none;
+			color: $nav-primary-color-hover;
+		}
+	}
+	.slicknav_row {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		&:hover, &:focus {
+			color: $nav-primary-color-hover;
+			background: none;
+			border-radius: 0;
+		}
+		& > a {
+			margin-right: auto;
+		}
+	}
 }
