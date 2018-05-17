@@ -1,6 +1,21 @@
 (function($){
 	$(document).ready(function(){
-        $('.gallery').find('br').detach();
+		$('.gallery').find('br').detach();
+		
+		var menu = slick.menu,
+			label = slick.label,
+			prepend = slick.prepend,
+			close = slick.close,
+			open = slick.open;
+
+		if ($(menu).length > 0) {
+			$(menu).slicknav({
+				label: label,
+				prependTo: prepend,
+				closedSymbol: close,
+				openedSymbol: open
+			});
+		}
 	});
 
 	// Window load event with minimum delay

@@ -54,7 +54,7 @@ gulp.task('lint', function(){
 gulp.task('scripts', function() {
     return gulp.src([
         'assets/js/source/*.js',
-        'assets/js/vendor/*.js'
+        'node_modules/slicknav/jquery.slicknav.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){
