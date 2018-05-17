@@ -66,3 +66,18 @@ add_filter( 'body_class', function( $classes ) {
 
 	return $classes;
 } );
+
+//* Get All Registered Menu
+function gb_get_menus() {
+	$menus = get_terms( 'nav_menu' );
+
+	$array = array();
+
+	if ( is_array( $menus ) && ! is_wp_error( $menus ) ) {
+		foreach( $menus as $menu ) {
+			$array['menu-'. $menu->slug] = $menu->name;
+		}
+	}
+
+	return $array;
+}
