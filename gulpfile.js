@@ -1,92 +1,105 @@
+'use strict';
+
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleancss = require('gulp-clean-css'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    cssnano = require('cssnano'),
+    cmq = require('css-mqpacker'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    vinylpaths = require('vinyl-paths'),
-    cmq = require('gulp-combine-mq'),
-    merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
-    runSequence = require('run-sequence'),
-    wait = require('gulp-wait'),
-    del = require('del');
+    browserSync = require('browser-sync').create(),
+    merge = require('merge-stream'),
+    wpPot = require('gulp-wp-pot');
 
-// CSS
-gulp.task('styles', function(){
-    var cssStream = gulp.src('node_modules/normalize.css/normalize.css')
-        .pipe(wait(400))
-        .pipe(concat('normalize.css'))
+var plugins = [
+    autoprefixer,
+    cssnano,
+    cmq
+];
 
-    var sassStream = gulp.src('assets/scss/style.scss')
-        .pipe(wait(400))
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(concat('app.scss'))
-    
-    var mergeStream = merge(cssStream, sassStream)
-        .pipe(concat('app.css'))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(cmq())
-        .pipe(gulp.dest('temp/css'))
-        .pipe(rename('app.css'))
-        .pipe(cleancss({
-            level: {1: {specialComments: 0 }}
-        }))
-        .pipe(gulp.dest('assets/css'))
-        .pipe(notify({ message: 'Styles task complete' }));
-    
-    return mergeStream;
-});
+var paths = {
+    styles: {
+        src: 'assets/scss/style.scss',
+        dest: 'assets/css'
+    },
+    scripts: {
+        src: [
+            'assets/js/source/app.js',
+            'node_modules/slicknav/jquery.slicknav.js'
+        ],
+        dest: 'assets/js'
+    },
+    languages: {
+        src: '**/*.php',
+        dest: 'languages/genesis-boilerplate.pot'
+    }
+}
 
-// JSHint
-gulp.task('lint', function(){
-    return gulp.src('assets/js/source/*.js')
+function translation() {
+    return gulp.src(paths.languages.src)
+        .pipe(wpPot())
+        .pipe(gulp.dest(paths.languages.dest))
+}
+
+function scriptsLint() {
+    return gulp.src('assets/js/source/**/*','gulpfile.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
-});
+}
 
-// Scripts
-gulp.task('scripts', function() {
-    return gulp.src([
-        'assets/js/source/*.js',
-        'node_modules/slicknav/jquery.slicknav.js'
-    ])
-    .pipe(changed('js'))
-    .pipe(foreach(function(stream, file){
-        return stream
-            .pipe(uglify())
-            .pipe(rename({suffix: '.min'}))
-            .pipe(gulp.dest('temp/js'))
-    }))
-    .pipe(gulp.dest('assets/js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});
+function style() {
+    return gulp.src(paths.styles.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(plugins))
+        .pipe(rename('app.css'))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.stream())
+        .pipe(notify({ message: 'Styles task complete' }));
+}
 
-// Clean
-gulp.task('clean', function(cb) {
-    return gulp.src('temp/*')
-    .pipe(vinylpaths(del))
-});
+function js() {
+    return gulp.src(paths.scripts.src)
+        .pipe(changed(paths.scripts.dest))
+        .pipe(foreach(function(stream, file){
+            return stream
+                .pipe(uglify())
+                .pipe(rename({suffix: '.min'}))
+        }))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream({match: '**/*.js'}))
+        .pipe(notify({ message: 'Scripts task complete' }));
+}
 
-// Default task
-gulp.task('default', function() {
-    runSequence(
-        'clean',
-        ['styles', 'lint', 'scripts'],
-        'watch'
-    );
-});
+function browserSyncServe(done) {
+    browserSync.init({
+        injectChanges: true,
+        proxy: 'http://wordpress.test'
+    })
+    done();
+}
 
-// Watch
-gulp.task('watch', function() {
-    // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
+function browserSyncReload(done) {
+    browserSync.reload();
+    done();
+}
 
-    // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
-});
+function watch() {
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], style).on('change', browserSync.reload)
+    gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
+    gulp.watch([
+            '*.php',
+            'lib/*'
+        ],
+        gulp.series(browserSyncReload)
+    )
+}
+
+gulp.task('translation', translation);
+
+gulp.task('default', gulp.parallel(style, js, browserSyncServe, watch));
