@@ -9,12 +9,10 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
-    merge = require('merge-stream'),
     wpPot = require('gulp-wp-pot');
 
 var plugins = [
