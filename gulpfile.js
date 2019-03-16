@@ -77,7 +77,7 @@ function js() {
 function browserSyncServe(done) {
     browserSync.init({
         injectChanges: true,
-        proxy: 'http://wordpress.test'
+        proxy: 'http://bootstrap.test'
     })
     done();
 }
@@ -92,7 +92,8 @@ function watch() {
     gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
     gulp.watch([
             '*.php',
-            'lib/*'
+            'lib/*',
+            '**/**/*.php'
         ],
         gulp.series(browserSyncReload)
     )
