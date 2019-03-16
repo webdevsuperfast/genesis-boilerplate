@@ -28,7 +28,7 @@ remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 // Remove Footer
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
-remove_action( 'genesis_foote', 'genesis_footer_markup_close', 15 );
+remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Force full-width-content layout setting
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
