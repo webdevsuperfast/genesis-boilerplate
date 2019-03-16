@@ -1,20 +1,25 @@
 (function($){
 	$(document).ready(function(){
 		$('.gallery').find('br').detach();
-		
-		var menu = slick.menu,
-			label = slick.label,
-			prepend = slick.prepend,
-			close = slick.close,
-			open = slick.open;
 
-		if ($(menu).length > 0) {
-			$(menu).slicknav({
-				label: label,
-				prependTo: prepend,
-				closedSymbol: close,
-				openedSymbol: open
-			});
+		// Mobile Menu
+		if ( $.isEmptyObject(slick) ) {
+			return false;
+		} else {
+			var menu = slick.menu,
+				label = slick.label,
+				prepend = slick.prepend,
+				close = slick.close,
+				open = slick.open;
+
+			if ($(menu).length > 0 && $('.landing-page').length == 0) {
+				$(menu).slicknav({
+					label: label,
+					prependTo: prepend,
+					closedSymbol: close,
+					openedSymbol: open
+				});
+			}
 		}
 	});
 
