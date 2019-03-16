@@ -64,6 +64,10 @@ add_filter( 'body_class', function( $classes ) {
 		unset( $classes[array_search( 'header-image', $classes )] );
 	}
 
+	if ( is_page_template( 'page_blog.php' ) ) :
+		$classes[] = 'blog';
+	endif;
+
 	return $classes;
 } );
 
