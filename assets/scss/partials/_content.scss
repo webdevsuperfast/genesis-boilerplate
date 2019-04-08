@@ -150,7 +150,15 @@ li {
 	label {
 		display: block;
 		font-weight: $heading-font-weight;
-		margin-right: $margin/2;
+		// margin-right: $margin/2;
+	}
+	.comment-form-cookies-consent {
+		> * {
+			display: inline-block;
+		}
+		label {
+			margin-left: $margin/2;
+		}
 	}
 }
 
