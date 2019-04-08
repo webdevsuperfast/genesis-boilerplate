@@ -11,10 +11,11 @@
   "license": "WTFPL",
   "homepage": "https://github.com/webdevsuperfast/genesis-boilerplate#readme",
   "devDependencies": {
-    "autoprefixer": "^9.5.0",
+    "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.3",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "fibers": "^3.1.1",
     "gulp": "^4.0.0",
     "gulp-changed": "^3.2.0",
     "gulp-flatmap": "^1.0.2",
@@ -25,7 +26,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.4",
-    "jshint": "^2.10.2"
+    "jshint": "^2.10.2",
+    "sass": "^1.17.4"
   },
   "dependencies": {
     "bourbon": "^5.1.0",
