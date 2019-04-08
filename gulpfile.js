@@ -13,7 +13,10 @@ var gulp = require('gulp'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
-    wpPot = require('gulp-wp-pot');
+    wpPot = require('gulp-wp-pot'),
+    Fiber = require('fibers');
+
+sass.compiler = require('sass');
 
 var plugins = [
     autoprefixer,
@@ -53,7 +56,7 @@ function scriptsLint() {
 
 function style() {
     return gulp.src(paths.styles.src)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.styles.dest))
