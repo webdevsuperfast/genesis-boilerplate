@@ -76,6 +76,13 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
+//* Remove Secondary Navigation menu
+remove_theme_support( 'genesis-menus' );
+
+add_theme_support( 'genesis-menus', array(
+	'primary' => __( 'Primary Navigation Menu', 'genesis-boilerplate' )
+) );
+
 //* Disable the superfish script
 add_filter( 'genesis_superfish_enabled', '__return_false' );
 
