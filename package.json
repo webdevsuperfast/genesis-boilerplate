@@ -25,9 +25,9 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "gulp-wp-pot": "^2.3.4",
+    "gulp-wp-pot": "^2.3.5",
     "jshint": "^2.10.2",
-    "sass": "^1.17.4"
+    "sass": "^1.18.0"
   },
   "dependencies": {
     "bourbon": "^5.1.0",
