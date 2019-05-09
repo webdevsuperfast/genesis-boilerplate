@@ -9,3 +9,5 @@ temp
 style.css.map
 temp
 .vscode
+.DS_Store
+.yarnclean
