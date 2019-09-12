@@ -5,7 +5,6 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
-    cmq = require('css-mqpacker'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -20,8 +19,7 @@ sass.compiler = require('sass');
 
 var plugins = [
     autoprefixer,
-    cssnano,
-    cmq
+    cssnano
 ];
 
 var paths = {
