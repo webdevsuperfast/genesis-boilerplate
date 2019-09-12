@@ -2,7 +2,10 @@
   "name": "genesis-boilerplate",
   "version": "0.0.1",
   "description": "Just another genesis child theme built on Sass and Bourbon.",
-  "repository": "git+https://github.com/webdevsuperfast/genesis-boilerplate.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdevsuperfast/genesis-boilerplate.git"
+  },
   "keywords": [
     "genesis",
     "wordpress"
@@ -11,13 +14,13 @@
   "license": "WTFPL",
   "homepage": "https://github.com/webdevsuperfast/genesis-boilerplate#readme",
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "browser-sync": "^2.26.5",
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "fibers": "^4.0.1",
     "gulp": "^4.0.2",
-    "gulp-changed": "^3.2.0",
+    "gulp-changed": "^4.0.1",
     "gulp-flatmap": "^1.0.2",
     "gulp-jshint": "^2.1.0",
     "gulp-notify": "^3.2.0",
@@ -27,11 +30,11 @@
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.5",
     "jshint": "^2.10.2",
-    "sass": "^1.20.1"
+    "sass": "^1.22.12"
   },
   "dependencies": {
-    "bourbon": "^5.1.0",
-    "bourbon-neat": "3.0.1",
+    "bourbon": "^6.0.0",
+    "bourbon-neat": "4.0.0",
     "jeet": "^7.2.0",
     "normalize.css": "^8.0.1",
     "slicknav": "^1.0.8"
@@ -40,5 +43,11 @@
   "private": true,
   "bugs": {
     "url": "https://github.com/webdevsuperfast/genesis-boilerplate/issues"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
