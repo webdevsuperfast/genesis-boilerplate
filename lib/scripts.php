@@ -29,7 +29,7 @@ function gb_theme_scripts() {
 		wp_deregister_script( 'superfish-args' );
 
 		// Theme CSS
-		wp_enqueue_style( 'app-css', GB_CSS . 'app.css' );
+		// wp_enqueue_style( 'app-css', GB_CSS . 'app.css' );
 
 		$menu = get_theme_mod( 'menu' );
 
@@ -59,7 +59,7 @@ function gb_theme_scripts() {
 				}
 			';
 
-			wp_add_inline_style( 'app-css', $css );
+			// wp_add_inline_style( 'app-css', $css );
 		}
 	}
 }
