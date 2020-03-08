@@ -2,6 +2,7 @@
   "name": "genesis-boilerplate",
   "version": "0.0.1",
   "description": "Just another genesis child theme built on Sass and Bourbon.",
+  "themeName": "Genesis Boilerplate",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webdevsuperfast/genesis-boilerplate.git"
@@ -11,13 +12,13 @@
     "wordpress"
   ],
   "author": "Rotsen Mark Acob",
+  "authorURL": "https://webdevsuperfast.github.io",
   "license": "WTFPL",
   "homepage": "https://github.com/webdevsuperfast/genesis-boilerplate#readme",
   "devDependencies": {
     "autoprefixer": "^9.7.3",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
-    "fibers": "^4.0.2",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.2",
     "gulp-flatmap": "^1.0.2",
@@ -28,15 +29,14 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.5",
-    "jshint": "^2.10.3",
-    "sass": "^1.23.7"
+    "jshint": "^2.10.3"
   },
   "dependencies": {
-    "bourbon": "^6.0.0",
-    "bourbon-neat": "4.0.0",
-    "jeet": "^7.2.0",
-    "normalize.css": "^8.0.1",
-    "slicknav": "^1.0.8"
+    "gulp-header": "^2.0.9",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "tailwindcss": "^1.2.0"
   },
   "main": "gulpfile.js",
   "private": true,
