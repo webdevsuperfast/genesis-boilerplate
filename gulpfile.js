@@ -1,10 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    cssnano = require('cssnano'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -13,19 +10,43 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
     wpPot = require('gulp-wp-pot'),
-    Fiber = require('fibers');
+    header = require('gulp-header');
 
-sass.compiler = require('sass');
-
+// PostCSS Plugins
 var plugins = [
-    autoprefixer,
-    cssnano
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('postcss-custom-properties'),
+    require('autoprefixer'),
+    require('cssnano')
 ];
+
+// Theme Information
+const pkg = require('./package.json');
+
+const banner = [
+    '@charset "UTF-8";',
+    '/*!',
+    'Theme Name: Genesis Boilerplate',
+    'Theme URI: https://github.com/webdevsuperfast/genesis-boilerplate/',
+    'Description: This is a child theme created for the Genesis Framework.',
+    'Author: Rotsen Mark Acob',
+    'Author URI: https://webdevsuperfast.github.io/',
+    'Version: 1.3.1',
+    'Template: genesis',
+    'Template Version: 2.2.7',
+    'Tags: black, orange, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready',
+    'License: GPL-2.0+',
+    'License URI: http://www.gnu.org/licenses/gpl-2.0.html',
+    '*/',
+    ''
+].join('\n');
 
 var paths = {
     styles: {
-        src: 'assets/scss/style.scss',
-        dest: 'assets/css'
+        src: 'assets/scss/style.css',
+        dest: './'
     },
     scripts: {
         src: [
@@ -54,9 +75,11 @@ function scriptsLint() {
 
 function style() {
     return gulp.src(paths.styles.src)
-        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
         .pipe(postcss(plugins))
-        .pipe(rename('app.css'))
+        .pipe(header(banner, {
+            pkg: banner
+        }))
+        .pipe(rename('style.css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
@@ -89,7 +112,7 @@ function browserSyncReload(done) {
 }
 
 function watch() {
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], style).on('change', browserSync.reload)
+    gulp.watch(['assets/scss/*.css', 'assets/scss/**/*.css'], style).on('change', browserSync.reload)
     gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
     gulp.watch([
             '*.php',
