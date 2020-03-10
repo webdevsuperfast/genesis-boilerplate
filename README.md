@@ -1,8 +1,10 @@
 # Genesis Boilerplate
 
+**Note:** This is currently under heavy development. Please checkout the [master](https://github.com/webdevsuperfast/genesis-boilerplate/tree/master) branch to use the latest stable version.
+
 ## Introduction
 
-Genesis Boilerplate is yet another starter child theme for the Genesis Framework. It is built using [Bourbon Sass Tool Set](https://www.bourbon.io/), [Jeet Grid System](http://jeet.gs/) and [SlickNav](https://github.com/ComputerWolf/SlickNav) for navigation.
+Genesis Boilerplate is a child theme for the Genesis Framework built on top of [Tailwind CSS](https://tailwindcss.com).
 
 ## Installation Instructions
 
@@ -24,17 +26,16 @@ Genesis Boilerplate is yet another starter child theme for the Genesis Framework
 
 **Note:** I suggest using package manager to install Git, Node and Yarn. You can use [Homebrew](httsp://brew.sh) if you're on a Mac or Linux/WSL, [Scoop](https://scoop.sh) or [Chocolatey](https://chocolatey.org/) if you're on Windows.
 
-## Features
+## Todos
 
-1. Bourbon Sass Tool Set.
-3. Grid system using Jeet.gs.
-4. Mobile-responsive navigation using Slicknav.
+- [ ] Integrate Genesis Theme Setup API
+- [ ] Integrate Genesis Configuration API
+- [ ] Integrate AMP Support
+- [ ] Gutenberg Support
+- [ ] Code cleanup and bug fixes
 
 ## Credits
 
 * [Genesis Framework](http://my.studiopress.com/themes/genesis/)
-* [Bourbon Sass Tool Set](https://www.bourbon.io/)
-* [Jeet.gs](http://jeet.gs/)
-* [SlickNav](https://github.com/ComputerWolf/SlickNav)
-* [Sass](http://sass-lang.com/)
+* [Tailwind CSS](https://tailwindcss.com)
 * [Gulp](http://gulpjs.com/)
