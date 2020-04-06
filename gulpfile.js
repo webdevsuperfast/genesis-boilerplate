@@ -50,8 +50,7 @@ var paths = {
     },
     scripts: {
         src: [
-            'assets/js/source/app.js',
-            'node_modules/slicknav/jquery.slicknav.js'
+            'assets/js/source/app.js'
         ],
         dest: 'assets/js'
     },
