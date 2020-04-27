@@ -22,3 +22,9 @@ define( 'GB_LIB', CHILD_DIR . '/lib/' );
 define( 'GB_MODULES', GB_LIB . 'modules/' );
 define( 'GB_JS', CHILD_URL . '/assets/js/' );
 define( 'GB_CSS', CHILD_URL . '/assets/css/' );
+
+include GB_LIB . 'modules/tailwind.php';
+
+foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
+  include $file;
+}
