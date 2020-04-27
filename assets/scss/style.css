@@ -2,4 +2,8 @@
 
 @import "tailwindcss/components";
 
+.wrap, .content-sidebar-wrap {
+  @apply mx-auto;
+}
+
 @import "tailwindcss/utilities";
