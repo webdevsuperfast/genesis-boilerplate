@@ -13,19 +13,23 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
     wpPot = require('gulp-wp-pot'),
-    Fiber = require('fibers');
+    Fiber = require('fibers'),
+    comments = require('postcss-discard-comments');;
 
 sass.compiler = require('sass');
 
 var plugins = [
     autoprefixer,
-    cssnano
+    cssnano,
+    comments({
+        removeAllButFirst: true
+    })
 ];
 
 var paths = {
     styles: {
         src: 'assets/scss/style.scss',
-        dest: 'assets/css'
+        dest: './'
     },
     scripts: {
         src: [
@@ -56,7 +60,7 @@ function style() {
     return gulp.src(paths.styles.src)
         .pipe(sass({fiber: Fiber}).on('error', sass.logError))
         .pipe(postcss(plugins))
-        .pipe(rename('app.css'))
+        .pipe(rename('style.css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
