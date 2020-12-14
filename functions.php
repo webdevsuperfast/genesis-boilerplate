@@ -48,9 +48,6 @@ remove_filter( 'comment_text', 'make_clickable', 9 );
 //* Remove the edit link
 add_filter ( 'genesis_edit_post_link' , '__return_false' );
 
-// Prevent WordPress from displaying login error message
-add_filter( 'login_errors', create_function( '$a', "return null;" ) );
-
 //* Unregister site layouts
 // genesis_unregister_layout( 'content-sidebar-sidebar' );
 // genesis_unregister_layout( 'sidebar-sidebar-content' );
