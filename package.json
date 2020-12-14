@@ -14,8 +14,8 @@
   "license": "WTFPL",
   "homepage": "https://github.com/webdevsuperfast/genesis-boilerplate#readme",
   "devDependencies": {
-    "autoprefixer": "^9.8.0",
-    "browser-sync": "^2.26.7",
+    "autoprefixer": "^10.1.0",
+    "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
     "fibers": "^5.0.0",
     "gulp": "^4.0.2",
@@ -23,13 +23,13 @@
     "gulp-flatmap": "^1.0.2",
     "gulp-jshint": "^2.1.0",
     "gulp-notify": "^3.2.0",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-wp-pot": "^2.4.3",
-    "jshint": "^2.11.1",
-    "sass": "^1.26.8"
+    "gulp-wp-pot": "^2.5.0",
+    "jshint": "^2.12.0",
+    "sass": "^1.30.0"
   },
   "dependencies": {
     "bourbon": "^7.0.0",
